@@ -1,0 +1,139 @@
+{
+  "_comment": [
+    "Demo teachers, for a working app on a fresh clone. These people are invented — the names, the",
+    "subject allocations and the hours are all made up, and none of it describes anyone real. The",
+    "subject codes are the ones in ../courses.json so that a seeded database can actually produce a",
+    "timetable.",
+    "",
+    "This replaces the campus.sqlite3 that used to be committed. That file held real, named",
+    "academics with their teaching loads and weekly working hours, which is not something to keep in",
+    "a repository with a public remote; JSON also has the advantage of being reviewable in a diff,",
+    "which a binary database is not.",
+    "",
+    "Load it with:  dotnet run --project src/RoutinePlanner.Web -- --seed",
+    "It refuses to run if the teachers table already has rows, unless you add --force."
+  ],
+  "teachers": [
+    {
+      "salutation": "Prof. Dr.",
+      "name": "Anita Demo",
+      "subjects_array": ["CSC538", "CSC545", "CSC546", "CSC665", "CSC667"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Friday": [{ "start": "10:30", "end": "13:30" }]
+      }
+    },
+    {
+      "salutation": "Dr.",
+      "name": "Bimal Example",
+      "subjects_array": ["CSC539", "CSC543", "CSC545", "CSC546", "CSC668"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Mr.",
+      "name": "Chandra Placeholder",
+      "subjects_array": ["CSC540", "CSC544", "CSC558", "CSC625", "CSC669"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Assoc. Prof. Ms.",
+      "name": "Deepa Sample",
+      "subjects_array": ["CSC559", "CSC561", "CSC618", "CSC620", "CSC666"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Dr.",
+      "name": "Eshan Fictional",
+      "subjects_array": ["CSC560", "CSC562", "CSC563", "CSC621", "CSC622"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Ms.",
+      "name": "Farah Notional",
+      "subjects_array": ["CSC564", "CSC565", "CSC619", "CSC623", "CSC624"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Mr.",
+      "name": "Gagan Illustrative",
+      "subjects_array": ["CSC538", "CSC540", "CSC542", "CSC622", "CSC667"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Dr.",
+      "name": "Harsha Hypothetical",
+      "subjects_array": ["CSC539", "CSC544", "CSC561", "CSC620", "CSC668"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Mr.",
+      "name": "Ishan Invented",
+      "subjects_array": ["CSC543", "CSC558", "CSC562", "CSC621", "CSC669"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    },
+    {
+      "salutation": "Ms.",
+      "name": "Jaya Madeup",
+      "subjects_array": ["CSC545", "CSC546", "CSC563", "CSC623", "CSC665"],
+      "availability_json": {
+        "Sunday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Monday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Tuesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Wednesday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }],
+        "Thursday": [{ "start": "10:30", "end": "13:30" }, { "start": "14:00", "end": "17:00" }]
+      }
+    }
+  ]
+}

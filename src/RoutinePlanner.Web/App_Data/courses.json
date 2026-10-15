@@ -1,0 +1,167 @@
+[
+  {
+    "semester": 1,
+    "subjects": [
+      {
+        "code": "CSC538",
+        "name": "Advanced Operating Systems",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC539",
+        "name": "Object Oriented Software Engineering",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC540",
+        "name": "Algorithms and Complexity",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC542",
+        "name": "Seminar I",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC543",
+        "name": "Neural Network",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC544",
+        "name": "Parallel and Distributed Computing",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC545",
+        "name": "Algorithmic Mathematics",
+        "type": "elective"
+      },
+      {
+        "code": "CSC546",
+        "name": "Advance Computer Architecture",
+        "type": "elective"
+      }
+    ]
+  },
+  {
+    "semester": 2,
+    "subjects": [
+      {
+        "code": "CSC558",
+        "name": "Compiler Optimization",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC559",
+        "name": "Web Systems and Algorithms",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC560",
+        "name": "Seminar II",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC561",
+        "name": "Machine Learning",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC562",
+        "name": "Computational Geometry",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC563",
+        "name": "Advance Database Concepts",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC564",
+        "name": "Data Warehouse and Data Mining",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC565",
+        "name": "Systems Programming",
+        "type": "elective"
+      }
+    ]
+  },
+  {
+    "semester": 3,
+    "subjects": [
+      {
+        "code": "CSC618",
+        "name": "Principles of Programming Languages",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC619",
+        "name": "Advanced Cryptography",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC620",
+        "name": "Literature Review Research",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC621",
+        "name": "Fuzzy Systems",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC622",
+        "name": "Embedded Systems",
+        "type": "elective"
+      },
+      {
+        "code": "CSC623",
+        "name": "Image Processing and Pattern Recognition",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC624",
+        "name": "Remote Sensing and GIS",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC625",
+        "name": "Multimedia Computing",
+        "type": "elective"
+      }
+    ]
+  },
+  {
+    "semester": 4,
+    "subjects": [
+      {
+        "code": "CSC665",
+        "name": "Genetic Algorithms",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC666",
+        "name": "Project/Dissertation",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC667",
+        "name": "Information and Coding Theory",
+        "type": "elective"
+      },
+      {
+        "code": "CSC668",
+        "name": "Cloud Computing",
+        "type": "compulsory"
+      },
+      {
+        "code": "CSC669",
+        "name": "e-Government",
+        "type": "elective"
+      }
+    ]
+  }
+]

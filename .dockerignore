@@ -1,0 +1,20 @@
+# .NET build artifacts — the Dockerfile builds fresh inside the image, so any
+# host-machine bin/obj folders would only cause stale-artifact confusion.
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+
+# Tests aren't part of the deployed image.
+tests/
+
+# VCS / editor / docs — irrelevant to the build, just bloats the context.
+.git/
+.gitignore
+.dockerignore
+README.md
+*.md
+
+# Runtime-generated content — created fresh by the app on first run
+# (GenerationLogger.SaveLogToFile calls Directory.CreateDirectory).
+src/RoutinePlanner.Web/logs/*

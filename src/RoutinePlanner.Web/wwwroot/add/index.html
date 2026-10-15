@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>Add Teacher</title>
+
+    <link rel="stylesheet" href="/add/style.css" />
+    
+    <script src="/add/availability.js"></script>
+    <script src="/add/courses.js"></script>
+    <script src="/add/script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Add New Teacher</h1>
+      <form name="teacher">
+        <article>
+          <fieldset>
+            <legend>
+              <input type="text" name="salutation" placeholder="Salutation" />
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Full Name of Teacher"
+                autofocus
+              />
+            </legend>
+            <section class="subjects">
+              <select>
+                <option disabled="disabled" selected="selected">
+                  Select a subject to assign it to the teacher
+                </option>
+                <!-- optgroups populated dynamically from /courses by courses.js -->
+              </select>
+              <output style="display: none">
+                <!-- generated using JS -->
+              </output>
+            </section>
+            <section class="availability">
+              <!-- rendered using JS -->
+            </section>
+          </fieldset>
+        </article>
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
+</html>

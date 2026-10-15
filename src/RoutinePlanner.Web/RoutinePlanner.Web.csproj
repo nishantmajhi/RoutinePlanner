@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <RootNamespace>RoutinePlanner.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SQLite driver: drop-in replacement for better-sqlite3, talks to the SAME .sqlite3 files -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.8" />
+    <!-- express-rate-limit equivalent is Microsoft.AspNetCore.RateLimiting, built into the ASP.NET Core 8 shared framework -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ship the untouched frontend, static reference docs, and log folder with the app.
+         We explicitly Remove these from the SDK's default auto-included Content items first,
+         then Include them ourselves with both CopyToOutputDirectory (for `dotnet build`/`dotnet run`)
+         and CopyToPublishDirectory (for `dotnet publish`) set explicitly, so both paths are
+         covered unambiguously. courses.json/courses.pdf are read-only reference data, so it's
+         safe for them to refresh on every build. -->
+    <Content Remove="wwwroot\**" />
+    <Content Remove="logs\**" />
+    <Content Remove="App_Data\courses.json" />
+    <Content Remove="App_Data\courses.pdf" />
+    <Content Remove="App_Data\seed\**" />
+
+    <Content Include="wwwroot\**" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="logs\**" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="App_Data\courses.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="App_Data\courses.pdf" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <!-- The demo teachers the seed switch reads. Read-only reference data like the two above, and
+         deliberately NOT a database: see Services/DatabaseSeeder.cs. -->
+    <Content Include="App_Data\seed\**" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- campus.sqlite3 and routine.sqlite3 are LIVE, mutable data (teacher edits, generated
+         routines) — not static assets. They are no longer tracked in git either: the committed
+         campus.sqlite3 held real, named academics with their teaching loads and working hours, and
+         a binary database is not reviewable in a diff. The seed switch on the command line builds a
+         fresh one from App_Data/seed/teachers.seed.json instead. The glob below therefore matches
+         nothing on a fresh clone, and the two targets are no-ops until the app has created a
+         database — which is intended, and is what DatabaseBuildConfigurationTests still pins down.
+
+         They are deliberately kept OUT of the normal Content
+         copy pipeline above: CopyToOutputDirectory/CopyToPublishDirectory="PreserveNewest" copies
+         based on file TIMESTAMP, not content, and every `git clone`/unzip resets the committed
+         seed file's timestamp to "now" — almost always newer than a previously-copied,
+         already-mutated output copy. That silently overwrote live data (added teachers,
+         generated routines) with the pristine seed database on every single rebuild, which is
+         the "routine not generating from the same sqlite db file" bug.
+         Instead, the targets below seed each output/publish folder from the committed copy ONLY
+         the first time the file doesn't exist there yet — a rebuild never touches a database
+         that's already been created. See tests/RoutinePlanner.Web.Tests/DatabaseBuildConfigurationTests.cs. -->
+    <Content Remove="App_Data\*.sqlite3" />
+    <None Include="App_Data\*.sqlite3" CopyToOutputDirectory="Never" CopyToPublishDirectory="Never" />
+    <_SeedDatabaseFiles Include="App_Data\*.sqlite3" />
+  </ItemGroup>
+
+  <Target Name="SeedDatabaseFilesOnBuild" AfterTargets="Build">
+    <Copy SourceFiles="@(_SeedDatabaseFiles)"
+          DestinationFolder="$(OutDir)App_Data"
+          Condition="!Exists('$(OutDir)App_Data\%(_SeedDatabaseFiles.Filename)%(_SeedDatabaseFiles.Extension)')" />
+  </Target>
+
+  <Target Name="SeedDatabaseFilesOnPublish" AfterTargets="Publish">
+    <Copy SourceFiles="@(_SeedDatabaseFiles)"
+          DestinationFolder="$(PublishDir)App_Data"
+          Condition="!Exists('$(PublishDir)App_Data\%(_SeedDatabaseFiles.Filename)%(_SeedDatabaseFiles.Extension)')" />
+  </Target>
+
+</Project>
+

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutinePlanner.Web", "src\RoutinePlanner.Web\RoutinePlanner.Web.csproj", "{9A6A1D3E-9C1E-4B8B-8B7E-2B7E6F0B2A11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutinePlanner.Web.Tests", "tests\RoutinePlanner.Web.Tests\RoutinePlanner.Web.Tests.csproj", "{B2C4E6A8-5D3F-4A2B-9E1C-7F8A6D4B3C2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A6A1D3E-9C1E-4B8B-8B7E-2B7E6F0B2A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6A1D3E-9C1E-4B8B-8B7E-2B7E6F0B2A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6A1D3E-9C1E-4B8B-8B7E-2B7E6F0B2A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6A1D3E-9C1E-4B8B-8B7E-2B7E6F0B2A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C4E6A8-5D3F-4A2B-9E1C-7F8A6D4B3C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C4E6A8-5D3F-4A2B-9E1C-7F8A6D4B3C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C4E6A8-5D3F-4A2B-9E1C-7F8A6D4B3C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C4E6A8-5D3F-4A2B-9E1C-7F8A6D4B3C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

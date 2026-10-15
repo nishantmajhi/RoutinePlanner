@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>Generate Routine</title>
+
+    <link rel="stylesheet" href="/preferences/style.css" />
+    
+    <script src="/preferences/fetchCourses.js"></script>
+    <script src="/preferences/generateRoutine.js"></script>
+    <script src="/preferences/script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Set Routine Preferences</h1>
+      <form name="routine">
+        <fieldset>
+          <legend>Select Days</legend>
+          <section id="day">
+            <label
+              ><input type="checkbox" name="day" value="Sunday" checked />
+              Sunday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Monday" checked />
+              Monday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Tuesday" checked />
+              Tuesday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Wednesday" checked />
+              Wednesday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Thursday" checked />
+              Thursday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Friday" checked />
+              Friday</label
+            >
+            <label
+              ><input type="checkbox" name="day" value="Saturday" />
+              Saturday</label
+            >
+          </section>
+        </fieldset>
+
+        <label>
+          Start Time
+          <input type="time" name="start_time" value="10:30" required />
+        </label>
+
+        <label>
+          Break Start
+          <input type="time" name="break_start" value="13:30" required />
+        </label>
+
+        <label>
+          Break End
+          <input type="time" name="break_end" value="14:00" required />
+        </label>
+
+        <label>
+          End Time
+          <input type="time" name="end_time" value="17:00" required />
+        </label>
+
+        <label>
+          Period Duration (minutes)
+          <input type="number" name="period_duration" value="90" required />
+        </label>
+
+        <label>
+          Periods Per Subject (weekly)
+          <input type="number" name="periods_per_subject" value="3" required />
+        </label>
+
+        <fieldset>
+          <legend>Select Semesters</legend>
+          <section id="sem">
+            <label>
+              <input type="radio" name="semesters" value="Odd" checked />
+              Odd Semesters
+            </label>
+            <label>
+              <input type="radio" name="semesters" value="Even" />
+              Even Semesters
+            </label>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend>Select Sections</legend>
+          <section id="year">
+            <!-- generated dynamically -->
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <legend>Select Subjects</legend>
+          <section id="subjects">
+            <!-- generated dynamically -->
+          </section>
+        </fieldset>
+
+        <button type="submit">Generate</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+# Build output
+bin/
+obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+
+# Runtime-generated logs
+src/RoutinePlanner.Web/logs/*.log
+
+# The SQLite databases are LIVE DATA and are deliberately not tracked.
+#
+# campus.sqlite3 used to be committed, and it held real, named academics with their subject
+# allocations and their weekly working hours. That is personal data, this repository has a public
+# remote, and a binary database is not reviewable in a diff either. A fresh clone now starts with no
+# database at all — the app creates an empty one on first use — and
+# `dotnet run --project src/RoutinePlanner.Web -- --seed` fills it with the invented teachers in
+# App_Data/seed/teachers.seed.json.
+#
+# Untracking them also means `dotnet run` can no longer dirty the working tree by doing nothing more
+# than what the app is for. It used to write straight into the tracked file, so adding a teacher
+# showed up as a binary diff and `git checkout` silently discarded it.
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm

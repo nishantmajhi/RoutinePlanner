@@ -1,0 +1,169 @@
+:root {
+  accent-color: hsl(250, 75%, 80%);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #333;
+  background-color: ghostwhite;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #2d2449;
+}
+
+form {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="submit"] {
+  border: none;
+  border-radius: 0.25rem;
+  padding-block: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  background-color: hsl(200, 70%, 50%);
+  transition: background-color 0.4s;
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(200, 70%, 45%);
+}
+
+article {
+  padding: 2rem 2.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: 1px solid darkgrey;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  width: 70dvw;
+}
+
+legend input {
+  border: 1px solid darkgrey;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+legend input::placeholder {
+  color: darkgrey;
+}
+
+input[name="salutation"] {
+  width: 12ch;
+}
+input[name="fullName"] {
+  width: 24ch;
+}
+
+fieldset > section {
+  margin: 2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  padding: 0.25rem;
+  flex-grow: 1;
+  font-size: 0.96rem;
+  color: #444;
+}
+
+select option {
+  text-align: end;
+}
+
+output {
+  margin-block: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.subject {
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.5rem 0.125rem 1rem;
+  flex-shrink: 0;
+  width: max-content;
+  font-size: 0.8rem;
+  background-color: hsl(250, 75%, 90%);
+  transition: background-color 0.4s;
+}
+
+.subject:hover {
+  background-color: hsl(250, 75%, 80%);
+}
+
+.subject button {
+  border: transparent;
+  font-size: 0.75rem;
+  background-color: transparent;
+}
+
+.availability {
+  margin-block: 0;
+}
+
+.availability label {
+  display: grid;
+  grid-template-columns: 10ch 1fr max-content;
+  align-items: center;
+}
+
+.day {
+  display: inline-block;
+  margin: 0;
+  font-size: 0.96rem;
+  width: 10ch;
+}
+
+.slots_container {
+  margin-bottom: 0.25rem;
+}
+
+.slot {
+  margin-inline: 0.5rem;
+  white-space: nowrap;
+}
+
+input[type="time"] {
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+button {
+  margin-block: 0.25rem;
+  border: transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  height: max-content;
+  width: max-content;
+  background-color: hsl(250, 75%, 90%);
+  transition: background-color 0.4s;
+}
+
+button:hover {
+  background-color: hsl(250, 75%, 80%);
+}
